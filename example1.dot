@@ -1,0 +1,4 @@
+digraph example1{
+    rankdir="LR";
+    A -> B -> C;
+}

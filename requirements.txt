@@ -1,0 +1,2 @@
+diagrams  # this will pull in the graphviz library
+jupyterlab  # to be able to run the notebook
