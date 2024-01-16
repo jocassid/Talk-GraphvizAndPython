@@ -1,1 +1,16 @@
-digraph example
+digraph example2 {
+  rankdir="LR";
+  label="Title of digraph";
+  labelloc="t";
+  subgraph foo {
+    label="foo";
+    "Node1";
+  } [bgcolor="green" style="filled"];
+  B [label="Node2"];
+  "Node1" -> B [taillabel="1" headlabel="*"];
+  subgraph cluster_graph2{
+    label="cluster_graph2";
+    C [label="Node3"];
+  }
+  B -> C [label="Another Edge"];
+}
