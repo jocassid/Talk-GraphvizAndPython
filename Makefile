@@ -1,5 +1,9 @@
 
+svgs = example1.svg example2.svg example3.svg GraphvizAndPython.slides.html stack1.svg
+all: $(svgs)
 
-build:
-	dot -Tsvg example1.dot > example1.svg
-	dot -Tsvg example2.dot > example2.svg
+%.svg: %.dot
+	dot -Tsvg $< > $@
+
+GraphvizAndPython.slides.html: GraphvizAndPython.ipynb
+	jupyter nbconvert  --to slides GraphvizAndPython.ipynb

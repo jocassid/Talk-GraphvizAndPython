@@ -1,0 +1,13 @@
+digraph example3{
+  rankdir="LR";
+  label="example3";
+  subgraph rectangular_nodes {
+    node [shape="rectangle"];
+    A;
+  };
+  subgraph cluster_1{
+    label="cluster 1";
+    B;
+  }
+  A -> B;
+}

@@ -1,0 +1,6 @@
+digraph stack1{
+  node [shape="rectangle"];
+  A [label="graphviz library"];
+  B [label="DOT language"];
+  A -> B;
+}
