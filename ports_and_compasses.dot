@@ -1,0 +1,7 @@
+digraph ports_and_compasses {
+  /*A;
+  B:foo;
+  C;
+  A -> B:foo;*/
+  node1:port1 -> node2:port5:nw;
+}
