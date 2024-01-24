@@ -7499,7 +7499,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Note: <code>dot</code> is one of a number of programs that Graphviz refers to as filters.  Filters use different strategies for positioning elements of the graphs.  DOT</p>
+<p>Note: <code>dot</code> is one of a number of programs that Graphviz refers to as filters.  Filters use different strategies for positioning elements of the graphs.  DOT is also the language used to define graphs.</p>
 </div>
 </div>
 </div>
@@ -7530,7 +7530,7 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="highlight"><pre><span></span><span class="k">graph</span><span class="w"> </span><span class="nt">example2</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="na">rankdir</span><span class="p">=</span><span class="s2">"LR"</span><span class="p">;</span>
-<span class="w">  </span><span class="na">label</span><span class="p">=</span><span class="s2">"Title of digraph"</span><span class="p">;</span>
+<span class="w">  </span><span class="na">label</span><span class="p">=</span><span class="s2">"example2"</span><span class="p">;</span>
 
 <span class="w">  </span><span class="c1">// define a node w/ attributes</span>
 <span class="w">  </span><span class="nt">"node 1"</span><span class="w"> </span><span class="p">[</span><span class="na">fillcolor</span><span class="p">=</span><span class="s2">"lightgreen"</span><span class="p">;</span><span class="w"> </span><span class="na">style</span><span class="p">=</span><span class="s2">"filled"</span><span class="p">];</span>
@@ -7538,14 +7538,21 @@ main {
 <span class="w">  </span><span class="c1">// define another node w/ attributes</span>
 <span class="w">  </span><span class="nt">B</span><span class="w"> </span><span class="p">[</span><span class="na">label</span><span class="p">=</span><span class="s2">"node 2"</span><span class="p">];</span>
 
-<span class="w">  </span><span class="c1">// un-directed edge with attributes</span>
+<span class="w">  </span><span class="cm">/* un-directed edge with attributes */</span>
 <span class="w">  </span><span class="nt">"node 1"</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="nt">B</span><span class="w"> </span><span class="p">[</span><span class="na">label</span><span class="p">=</span><span class="s2">"directionality\nis overrated"</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+This is a more complex example.
+- In the first line it uses graph rather than digraph indicating that this graph has undirected edges
+- We see attributes defined in key=value syntax as well as in the attribute list which is enclosed in square brackets.
+- We have 2 node definitions which are separate from the edge definitions
+- Note that node name doesn't need to match the label
+- Since isn't a digraph, we use the -- operator to define the edge.
+</aside></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b0caf5b4-d1e5-4521-bf58-21d572528d8d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7580,7 +7587,9 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+This graph contains two subgraphs.  Sub-graphs can be used to apply attributes to a group of nodes &amp; edges or (If the subgraph name begins with 'cluster_' a box will be drawn around the nodes and edges within the subgraph).
+</aside></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=287f59fd-d920-40e3-9ee2-d0943846496f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7591,7 +7600,568 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=94997f6e-f240-449d-a574-286c0500d14b">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc05419d-eee6-435f-be71-48375753941f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>So what about ...</p>
+<p><img alt="python logo" src="python-logo-generic.svg"/></p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e0df5afc-a949-4f62-a919-1ae85680ffbf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Let's use a Python library to generate the DOT code.</p>
+<p><img alt="stack1" src="stack1.svg"/></p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d8f426b3-5c2e-492d-a9bf-df54807dd96c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To install the graphviz library.</p>
+<p><code>pip install graphviz</code></p>
+<p>Make sure the <code>dot</code> program is on your <code>PATH</code></p>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3c864524-a456-4f57-92a3-bedbe7b32879">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">graphviz</span> <span class="kn">import</span> <span class="n">Digraph</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'graphviz1'</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">'Graph Label'</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'A'</span><span class="p">,</span> <span class="s2">"Node1"</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'B'</span><span class="p">,</span> <span class="s2">"Node2"</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'C'</span><span class="p">,</span> <span class="s2">"Node3"</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'D'</span><span class="p">,</span> <span class="s1">'Node4'</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">([</span><span class="s1">'AB'</span><span class="p">,</span> <span class="s1">'BC'</span><span class="p">])</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'C'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><aside class="notes">
+In this snipped we build a directed graph (Diagraph).  With 4 nodes and 3 connecting edges.  Note: The first argument is the node name, the second is the label for the node.  Keeping the node name short is handy when defining edges.
+</aside></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e0a235e1-b75f-47ee-948c-a8630cfbeb1a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>// Graph Label
+digraph graphviz1 {
+	A [label=Node1]
+	B [label=Node2]
+	C [label=Node3]
+	D [label=Node4]
+	A -&gt; B
+	B -&gt; C
+	C -&gt; D
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><aside class="notes">
+Use .source to get the DOT code for the graph
+</aside></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2f81c1fc-172a-4776-9deb-428e41c7dd42">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Outputs graph to current directory.  2 Files are created</span>
+<span class="c1"># a .gv file with the DOT definition of the graph</span>
+<span class="c1"># a .gv.pdf with the PDF version (pdf generated by default)</span>
+<span class="c1"># Filename will be based on the name passed to the init method</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>'graphviz1.gv.pdf'</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2d32cd43-dc3e-4f84-81c3-71bfda3029b4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># specify directory to write file to using directory argument</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="s1">'output'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>'output/graphviz1.gv.pdf'</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=32b7f355-f8ea-46f1-8b9d-de0d7d50372f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># A different output format can be specified when graph is created</span>
+<span class="n">graph2</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'graphviz2'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'svg'</span><span class="p">)</span>
+
+<span class="c1"># or at any point</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="s1">'svg'</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">directory</span> <span class="o">=</span> <span class="s1">'.'</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>'graphviz1.gv.svg'</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6037a5f3-d32c-42fe-80b3-da7a52cff8f7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><img alt="graphviz1" src="graphviz1.gv.svg"/></p>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=22469dd5-3944-4f73-84d5-9ad202d10af5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Hey look graphs automatically display in Jupyter (when using svg format)</span>
+<span class="n">graph</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
+<img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiBncmFwaHZpejEgUGFnZXM6IDEgLS0+Cjxzdmcgd2lkdGg9IjkwcHQiIGhlaWdodD0iMjYwcHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgODkuODkgMjYwLjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPGcgaWQ9ImdyYXBoMCIgY2xhc3M9ImdyYXBoIiB0cmFuc2Zvcm09InNjYWxlKDEgMSkgcm90YXRlKDApIHRyYW5zbGF0ZSg0IDI1NikiPgo8dGl0bGU+Z3JhcGh2aXoxPC90aXRsZT4KPHBvbHlnb24gZmlsbD0id2hpdGUiIHN0cm9rZT0idHJhbnNwYXJlbnQiIHBvaW50cz0iLTQsNCAtNCwtMjU2IDg1Ljg5LC0yNTYgODUuODksNCAtNCw0Ii8+CjwhLS0gQSAtLT4KPGcgaWQ9Im5vZGUxIiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT5BPC90aXRsZT4KPGVsbGlwc2UgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgY3g9IjQwLjk1IiBjeT0iLTIzNCIgcng9IjQwLjg5IiByeT0iMTgiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNDAuOTUiIHk9Ii0yMzAuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5Ob2RlMTwvdGV4dD4KPC9nPgo8IS0tIEIgLS0+CjxnIGlkPSJub2RlMiIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+QjwvdGl0bGU+CjxlbGxpcHNlIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGN4PSI0MC45NSIgY3k9Ii0xNjIiIHJ4PSI0MC44OSIgcnk9IjE4Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQwLjk1IiB5PSItMTU4LjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+Tm9kZTI8L3RleHQ+CjwvZz4KPCEtLSBBJiM0NTsmZ3Q7QiAtLT4KPGcgaWQ9ImVkZ2UxIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT5BJiM0NTsmZ3Q7QjwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik00MC45NSwtMjE1LjdDNDAuOTUsLTIwNy45OCA0MC45NSwtMTk4LjcxIDQwLjk1LC0xOTAuMTEiLz4KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iNDQuNDUsLTE5MC4xIDQwLjk1LC0xODAuMSAzNy40NSwtMTkwLjEgNDQuNDUsLTE5MC4xIi8+CjwvZz4KPCEtLSBDIC0tPgo8ZyBpZD0ibm9kZTMiIGNsYXNzPSJub2RlIj4KPHRpdGxlPkM8L3RpdGxlPgo8ZWxsaXBzZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBjeD0iNDAuOTUiIGN5PSItOTAiIHJ4PSI0MC44OSIgcnk9IjE4Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQwLjk1IiB5PSItODYuMyIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5Ob2RlMzwvdGV4dD4KPC9nPgo8IS0tIEImIzQ1OyZndDtDIC0tPgo8ZyBpZD0iZWRnZTIiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPkImIzQ1OyZndDtDPC90aXRsZT4KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTQwLjk1LC0xNDMuN0M0MC45NSwtMTM1Ljk4IDQwLjk1LC0xMjYuNzEgNDAuOTUsLTExOC4xMSIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI0NC40NSwtMTE4LjEgNDAuOTUsLTEwOC4xIDM3LjQ1LC0xMTguMSA0NC40NSwtMTE4LjEiLz4KPC9nPgo8IS0tIEQgLS0+CjxnIGlkPSJub2RlNCIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+RDwvdGl0bGU+CjxlbGxpcHNlIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGN4PSI0MC45NSIgY3k9Ii0xOCIgcng9IjQwLjg5IiByeT0iMTgiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNDAuOTUiIHk9Ii0xNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPk5vZGU0PC90ZXh0Pgo8L2c+CjwhLS0gQyYjNDU7Jmd0O0QgLS0+CjxnIGlkPSJlZGdlMyIgY2xhc3M9ImVkZ2UiPgo8dGl0bGU+QyYjNDU7Jmd0O0Q8L3RpdGxlPgo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNNDAuOTUsLTcxLjdDNDAuOTUsLTYzLjk4IDQwLjk1LC01NC43MSA0MC45NSwtNDYuMTEiLz4KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iNDQuNDUsLTQ2LjEgNDAuOTUsLTM2LjEgMzcuNDUsLTQ2LjEgNDQuNDUsLTQ2LjEiLz4KPC9nPgo8L2c+Cjwvc3ZnPgo="/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a00d3905-8f9f-4931-8a77-378736efcd02">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">graph3</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span>
+    <span class="s1">'graphviz3'</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">'svg'</span><span class="p">,</span>
+    <span class="n">node_attr</span><span class="o">=</span><span class="p">{</span><span class="s1">'shape'</span><span class="p">:</span> <span class="s1">'rectangle'</span><span class="p">},</span>
+    <span class="n">graph_attr</span><span class="o">=</span><span class="p">{</span><span class="s1">'rankdir'</span><span class="p">:</span> <span class="s1">'LR'</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">graph3</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span>
+<span class="n">graph3</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'B'</span><span class="p">)</span>
+<span class="n">graph3</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">)</span>
+<span class="n">graph3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
+<img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiBncmFwaHZpejMgUGFnZXM6IDEgLS0+Cjxzdmcgd2lkdGg9IjE1MnB0IiBoZWlnaHQ9IjQ0cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgMTUyLjAwIDQ0LjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPGcgaWQ9ImdyYXBoMCIgY2xhc3M9ImdyYXBoIiB0cmFuc2Zvcm09InNjYWxlKDEgMSkgcm90YXRlKDApIHRyYW5zbGF0ZSg0IDQwKSI+Cjx0aXRsZT5ncmFwaHZpejM8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSJ0cmFuc3BhcmVudCIgcG9pbnRzPSItNCw0IC00LC00MCAxNDgsLTQwIDE0OCw0IC00LDQiLz4KPCEtLSBBIC0tPgo8ZyBpZD0ibm9kZTEiIGNsYXNzPSJub2RlIj4KPHRpdGxlPkE8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjU0LC0zNiAwLC0zNiAwLDAgNTQsMCA1NCwtMzYiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjciIHk9Ii0xNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPkE8L3RleHQ+CjwvZz4KPCEtLSBCIC0tPgo8ZyBpZD0ibm9kZTIiIGNsYXNzPSJub2RlIj4KPHRpdGxlPkI8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjE0NCwtMzYgOTAsLTM2IDkwLDAgMTQ0LDAgMTQ0LC0zNiIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxMTciIHk9Ii0xNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPkI8L3RleHQ+CjwvZz4KPCEtLSBBJiM0NTsmZ3Q7QiAtLT4KPGcgaWQ9ImVkZ2UxIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT5BJiM0NTsmZ3Q7QjwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik01NC40LC0xOEM2Mi4zOSwtMTggNzEuMzEsLTE4IDc5LjgyLC0xOCIvPgo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI3OS45MiwtMjEuNSA4OS45MiwtMTggNzkuOTIsLTE0LjUgNzkuOTIsLTIxLjUiLz4KPC9nPgo8L2c+Cjwvc3ZnPgo="/>
+</div>
+</div>
+</div>
+</div>
+</div><aside class="notes">
+Here we define some attributes for the graph and the nodes in it.  The edges determine ranking of nodes which Graphviz uses to arrange the nodes.  rankdir="LR" means that nodes will be arranged left to right by rank.
+</aside></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b4fa8104-bd65-418d-abb2-adb55c6c334b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># You can change node, graph, and edge attributes as you build the graph</span>
+<span class="n">graph3</span><span class="o">.</span><span class="n">edge_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">arrowhead</span><span class="o">=</span><span class="s1">'vee'</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="s1">'2'</span><span class="p">)</span>
+<span class="n">graph3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
+<img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiBncmFwaHZpejMgUGFnZXM6IDEgLS0+Cjxzdmcgd2lkdGg9IjE1MnB0IiBoZWlnaHQ9IjQ0cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgMTUyLjAwIDQ0LjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPGcgaWQ9ImdyYXBoMCIgY2xhc3M9ImdyYXBoIiB0cmFuc2Zvcm09InNjYWxlKDEgMSkgcm90YXRlKDApIHRyYW5zbGF0ZSg0IDQwKSI+Cjx0aXRsZT5ncmFwaHZpejM8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSJ0cmFuc3BhcmVudCIgcG9pbnRzPSItNCw0IC00LC00MCAxNDgsLTQwIDE0OCw0IC00LDQiLz4KPCEtLSBBIC0tPgo8ZyBpZD0ibm9kZTEiIGNsYXNzPSJub2RlIj4KPHRpdGxlPkE8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjU0LC0zNiAwLC0zNiAwLDAgNTQsMCA1NCwtMzYiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMjciIHk9Ii0xNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPkE8L3RleHQ+CjwvZz4KPCEtLSBCIC0tPgo8ZyBpZD0ibm9kZTIiIGNsYXNzPSJub2RlIj4KPHRpdGxlPkI8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjE0NCwtMzYgOTAsLTM2IDkwLDAgMTQ0LDAgMTQ0LC0zNiIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxMTciIHk9Ii0xNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPkI8L3RleHQ+CjwvZz4KPCEtLSBBJiM0NTsmZ3Q7QiAtLT4KPGcgaWQ9ImVkZ2UxIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT5BJiM0NTsmZ3Q7QjwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik01NC40LC0xOEM1OS4zMiwtMTggNjQuNTksLTE4IDY5LjksLTE4Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9Ijg5LjkyLC0xOCA2OS45MiwtMjcgNzkuOTIsLTE4IDY5LjkyLC0xOCA2OS45MiwtMTggNjkuOTIsLTE4IDc5LjkyLC0xOCA2OS45MiwtOSA4OS45MiwtMTggODkuOTIsLTE4Ii8+CjwvZz4KPC9nPgo8L3N2Zz4K"/>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e9cf67f2-db8a-423e-a833-57631371c9ef">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">graph3</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>digraph graphviz3 {
+	graph [rankdir=LR]
+	node [shape=rectangle]
+	edge [arrowhead=vee arrowsize=2]
+	A
+	B
+	A -&gt; B
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7f5b53f7-1279-44c6-b0b8-27c6c12b84ff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">graph4</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'graphviz4'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'svg'</span><span class="p">)</span>
+<span class="n">graph4</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'oval'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">graph4</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+
+<span class="n">graph5</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'graphviz5'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'svg'</span><span class="p">)</span>
+<span class="n">graph5</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">rankdir</span><span class="o">=</span><span class="s1">'LR'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">graph5</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>digraph graphviz4 {
+	node [shape=oval]
+}
+
+
+digraph graphviz5 {
+	rankdir=LR
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><aside class="notes">
+In this example we call attr using 'node' to specify that this attribute applies only to the nodes in the graph.  In the latter call the attribute will apply to the graph itself.
+</aside></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b9d3f101-d752-4186-af9c-a3db21c6e92a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">build_digraph</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">graph_attr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">default_graph_attr</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'rankdir'</span><span class="p">:</span> <span class="s1">'LR'</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">graph_attr</span><span class="p">:</span>
+        <span class="n">default_graph_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">graph_attr</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Digraph</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s1">'graphviz</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+        <span class="nb">format</span><span class="o">=</span><span class="s1">'svg'</span><span class="p">,</span>
+        <span class="n">graph_attr</span><span class="o">=</span><span class="n">default_graph_attr</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><aside class="notes">
+To cutback on the length of these exmples I've added a factory function to create Digraphs that are arranged left-to-right and use svg for the output format.
+</aside></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eaade05a-ce8e-4e62-ac66-d92f048184c9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">graph6</span> <span class="o">=</span> <span class="n">build_digraph</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">graph_attr</span><span class="o">=</span><span class="p">{</span><span class="s1">'splines'</span><span class="p">:</span> <span class="s1">'false'</span><span class="p">})</span>
+<span class="n">graph6</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'Northeast:ne'</span><span class="p">,</span> <span class="s1">'Southwest:sw'</span><span class="p">)</span>
+<span class="n">graph6</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
+<img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiBncmFwaHZpejYgUGFnZXM6IDEgLS0+Cjxzdmcgd2lkdGg9IjI3OXB0IiBoZWlnaHQ9Ijc5cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgMjc5LjI4IDc5LjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPGcgaWQ9ImdyYXBoMCIgY2xhc3M9ImdyYXBoIiB0cmFuc2Zvcm09InNjYWxlKDEgMSkgcm90YXRlKDApIHRyYW5zbGF0ZSg0IDc1KSI+Cjx0aXRsZT5ncmFwaHZpejY8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSJ0cmFuc3BhcmVudCIgcG9pbnRzPSItNCw0IC00LC03NSAyNzUuMjgsLTc1IDI3NS4yOCw0IC00LDQiLz4KPCEtLSBOb3J0aGVhc3QgLS0+CjxnIGlkPSJub2RlMSIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+Tm9ydGhlYXN0PC90aXRsZT4KPGVsbGlwc2UgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgY3g9IjU3Ljg0IiBjeT0iLTE4IiByeD0iNTcuNjkiIHJ5PSIxOCIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI1Ny44NCIgeT0iLTE0LjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+Tm9ydGhlYXN0PC90ZXh0Pgo8L2c+CjwhLS0gU291dGh3ZXN0IC0tPgo8ZyBpZD0ibm9kZTIiIGNsYXNzPSJub2RlIj4KPHRpdGxlPlNvdXRod2VzdDwvdGl0bGU+CjxlbGxpcHNlIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGN4PSIyMTEuNDgiIGN5PSItNTMiIHJ4PSI1OS41OSIgcnk9IjE4Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjIxMS40OCIgeT0iLTQ5LjMiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+U291dGh3ZXN0PC90ZXh0Pgo8L2c+CjwhLS0gTm9ydGhlYXN0JiM0NTsmZ3Q7U291dGh3ZXN0IC0tPgo8ZyBpZD0iZWRnZTEiIGNsYXNzPSJlZGdlIj4KPHRpdGxlPk5vcnRoZWFzdDpuZSYjNDU7Jmd0O1NvdXRod2VzdDpzdzwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik03My44NCwtMzVDNzMuODQsLTM1IDE1NS4wMiwtMzUgMTg0LjIsLTM1Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjE4NC40OCwtMzguNSAxOTQuNDgsLTM1IDE4NC40OCwtMzEuNSAxODQuNDgsLTM4LjUiLz4KPC9nPgo8L2c+Cjwvc3ZnPgo="/>
+</div>
+</div>
+</div>
+</div>
+</div><aside class="notes">
+By providing a compass direction after the node name you can specify where on the node's perimeter you want the edge to connect.
+</aside></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5a3562aa-3bc0-4e9b-af5e-2173f615d73e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">graph7</span> <span class="o">=</span> <span class="n">build_digraph</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">graph_attr</span><span class="o">=</span><span class="p">{</span><span class="s1">'splines'</span><span class="p">:</span> <span class="s1">'false'</span><span class="p">})</span>
+<span class="n">graph7</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'Node1:c'</span><span class="p">,</span> <span class="s1">'Node2:_'</span><span class="p">)</span>
+<span class="n">graph7</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
+<img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiBncmFwaHZpejcgUGFnZXM6IDEgLS0+Cjxzdmcgd2lkdGg9IjIwOHB0IiBoZWlnaHQ9IjQ0cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgMjA3Ljc5IDQ0LjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPGcgaWQ9ImdyYXBoMCIgY2xhc3M9ImdyYXBoIiB0cmFuc2Zvcm09InNjYWxlKDEgMSkgcm90YXRlKDApIHRyYW5zbGF0ZSg0IDQwKSI+Cjx0aXRsZT5ncmFwaHZpejc8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSJ0cmFuc3BhcmVudCIgcG9pbnRzPSItNCw0IC00LC00MCAyMDMuNzksLTQwIDIwMy43OSw0IC00LDQiLz4KPCEtLSBOb2RlMSAtLT4KPGcgaWQ9Im5vZGUxIiBjbGFzcz0ibm9kZSI+Cjx0aXRsZT5Ob2RlMTwvdGl0bGU+CjxlbGxpcHNlIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGN4PSI0MC45NSIgY3k9Ii0xOCIgcng9IjQwLjg5IiByeT0iMTgiLz4KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iNDAuOTUiIHk9Ii0xNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPk5vZGUxPC90ZXh0Pgo8L2c+CjwhLS0gTm9kZTIgLS0+CjxnIGlkPSJub2RlMiIgY2xhc3M9Im5vZGUiPgo8dGl0bGU+Tm9kZTI8L3RpdGxlPgo8ZWxsaXBzZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBjeD0iMTU4Ljg0IiBjeT0iLTE4IiByeD0iNDAuODkiIHJ5PSIxOCIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxNTguODQiIHk9Ii0xNC4zIiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPk5vZGUyPC90ZXh0Pgo8L2c+CjwhLS0gTm9kZTEmIzQ1OyZndDtOb2RlMiAtLT4KPGcgaWQ9ImVkZ2UxIiBjbGFzcz0iZWRnZSI+Cjx0aXRsZT5Ob2RlMTpjJiM0NTsmZ3Q7Tm9kZTI6XzwvdGl0bGU+CjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik04Mi4xNSwtMThDOTAuMzMsLTE4IDk5LjA0LC0xOCAxMDcuNTIsLTE4Ii8+Cjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjEwNy43LC0yMS41IDExNy43LC0xOCAxMDcuNywtMTQuNSAxMDcuNywtMjEuNSIvPgo8L2c+CjwvZz4KPC9zdmc+Cg=="/>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b332babf-a9ad-4c4c-999d-dbd707398e0c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ec006885-8fc8-4b6f-bd91-348ebfdb3db2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">graph8</span> <span class="o">=</span> <span class="n">build_digraph</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">graph8</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'centered</span><span class="se">\n</span><span class="s1">left\lright</span><span class="se">\r</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">graph8</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
+<img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiBncmFwaHZpejggUGFnZXM6IDEgLS0+Cjxzdmcgd2lkdGg9IjEyMXB0IiBoZWlnaHQ9IjgzcHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgMTIxLjE0IDgyLjk1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPGcgaWQ9ImdyYXBoMCIgY2xhc3M9ImdyYXBoIiB0cmFuc2Zvcm09InNjYWxlKDEgMSkgcm90YXRlKDApIHRyYW5zbGF0ZSg0IDc4Ljk1KSI+Cjx0aXRsZT5ncmFwaHZpejg8L3RpdGxlPgo8cG9seWdvbiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSJ0cmFuc3BhcmVudCIgcG9pbnRzPSItNCw0IC00LC03OC45NSAxMTcuMTQsLTc4Ljk1IDExNy4xNCw0IC00LDQiLz4KPCEtLSBBIC0tPgo8ZyBpZD0ibm9kZTEiIGNsYXNzPSJub2RlIj4KPHRpdGxlPkE8L3RpdGxlPgo8ZWxsaXBzZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBjeD0iNTYuNTciIGN5PSItMzcuNDgiIHJ4PSI1Ni42NCIgcnk9IjM3LjQ1Ii8+Cjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjU2LjU3IiB5PSItNDguNzgiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+Y2VudGVyZWQ8L3RleHQ+Cjx0ZXh0IHRleHQtYW5jaG9yPSJzdGFydCIgeD0iMjQuNTciIHk9Ii0zMy43OCIgZm9udC1mYW1pbHk9IlRpbWVzLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5sZWZ0PC90ZXh0Pgo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSI1Ni41NyIgeT0iLTE4Ljc4IiBmb250LWZhbWlseT0iVGltZXMsc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPnJpZ2h0JiMxMzs8L3RleHQ+CjwvZz4KPC9nPgo8L3N2Zz4K"/>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8a223d48-f367-44f4-8950-3c13e2b93886">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">graph9</span> <span class="o">=</span> <span class="n">build_digraph</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">graph9</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'B'</span><span class="p">,</span> <span class="s1">'&lt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;One&lt;/td&gt;&lt;td&gt;Two&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&gt;'</span><span class="p">)</span>
+<span class="n">graph9</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml" tabindex="0">
+<img alt="No description has been provided for this image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDIuNDMuMCAoMCkKIC0tPgo8IS0tIFRpdGxlOiBncmFwaHZpejkgUGFnZXM6IDEgLS0+Cjxzdmcgd2lkdGg9IjE0MnB0IiBoZWlnaHQ9IjU3cHQiCiB2aWV3Qm94PSIwLjAwIDAuMDAgMTQyLjM1IDU3LjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPGcgaWQ9ImdyYXBoMCIgY2xhc3M9ImdyYXBoIiB0cmFuc2Zvcm09InNjYWxlKDEgMSkgcm90YXRlKDApIHRyYW5zbGF0ZSg0IDUzLjUpIj4KPHRpdGxlPmdyYXBodml6OTwvdGl0bGU+Cjxwb2x5Z29uIGZpbGw9IndoaXRlIiBzdHJva2U9InRyYW5zcGFyZW50IiBwb2ludHM9Ii00LDQgLTQsLTUzLjUgMTM4LjM1LC01My41IDEzOC4zNSw0IC00LDQiLz4KPCEtLSBCIC0tPgo8ZyBpZD0ibm9kZTEiIGNsYXNzPSJub2RlIj4KPHRpdGxlPkI8L3RpdGxlPgo8ZWxsaXBzZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBjeD0iNjcuMTgiIGN5PSItMjQuNzUiIHJ4PSI2Ny4zNSIgcnk9IjI1Ii8+Cjxwb2x5Z29uIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMzEuMTgsLTEzLjc1IDMxLjE4LC0zNC43NSA2Ni4xOCwtMzQuNzUgNjYuMTgsLTEzLjc1IDMxLjE4LC0xMy43NSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ic3RhcnQiIHg9IjM0LjE4IiB5PSItMjAuNTUiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+T25lPC90ZXh0Pgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjY4LjE4LC0xMy43NSA2OC4xOCwtMzQuNzUgMTA0LjE4LC0zNC43NSAxMDQuMTgsLTEzLjc1IDY4LjE4LC0xMy43NSIvPgo8dGV4dCB0ZXh0LWFuY2hvcj0ic3RhcnQiIHg9IjcxLjE4IiB5PSItMjAuNTUiIGZvbnQtZmFtaWx5PSJUaW1lcyxzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+VHdvPC90ZXh0Pgo8cG9seWdvbiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjI3LjY4LC0xMS4yNSAyNy42OCwtMzguMjUgMTA2LjY4LC0zOC4yNSAxMDYuNjgsLTExLjI1IDI3LjY4LC0xMS4yNSIvPgo8L2c+CjwvZz4KPC9zdmc+Cg=="/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cec78e07-bf28-42a7-9a3f-d6cca1ef4511">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><img alt="valid html" src="valid_html_venn.svg"/></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a0e2df68-7bb1-435c-ab8a-fca75163cb76">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Resources">Resources<a class="anchor-link" href="#Resources">¶</a></h2><ul>
+<li><a href="https://graphviz.org/">graphviz.org</a></li>
+<li><a href="https://graphviz.readthedocs.io/en/stable/">graphviz (Python Library)</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e8e188a2-895b-4d86-97b7-0c37b94a2d68">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=762312a6-f570-41e3-a974-1854fbd517ab">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

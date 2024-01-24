@@ -8,5 +8,5 @@ clean:
 %.svg: %.dot
 	dot -Tsvg $< > $@
 
-GraphvizAndPython.slides.html: GraphvizAndPython.ipynb
+slides: GraphvizAndPython.ipynb
 	jupyter nbconvert  --to slides GraphvizAndPython.ipynb
