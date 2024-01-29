@@ -1,5 +1,5 @@
 
-svgs = example1.svg example2.svg example3.svg GraphvizAndPython.slides.html stack1.svg
+svgs = example1.svg example2.svg example3.svg GraphvizAndPython.slides.html stack1.svg record_based_shape.svg
 all: $(svgs)
 
 clean:
