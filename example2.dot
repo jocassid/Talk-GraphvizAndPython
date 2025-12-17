@@ -1,7 +1,16 @@
 graph example2 {
+  /* Set graph attrributes
+     - nodes placed in according to rank left to right
+     - label is example 2
+  */
   rankdir="LR";
-  label="example2";
-  "node 1" [fillcolor="lightgreen"; style="filled"];
-  B [label="node 2"];
-  "node 1" -- B [label="directionality\nis overrated"];
+  label="example2"; 
+
+  "node 1";  // node ID is quoted string
+  Node_2;    // node ID mix of letters, numbers, and underscores
+  -15.5;    
+
+  // Undirected Edges
+  "node 1" -- Node_2;
+  "node 1" -- -15.5;
 }

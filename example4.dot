@@ -1,0 +1,23 @@
+digraph example4{
+    rankdir=LR;
+    
+    "Outside of Sub-graph";
+    subgraph subgraph_1{
+        node[shape="hexagon"];
+        "In subgraph_1";
+    }
+
+    subgraph cluster_1{
+        bgcolor="limegreen";
+        node[shape=rectangle];
+        label="cluster_1";
+        "In cluster_1"
+    }
+
+    {
+        node[shape=trapezium];
+        "In anonymous subgraph";
+    }
+
+    "In subgraph_1" -> "In cluster_1" -> "In anonymous subgraph";
+}

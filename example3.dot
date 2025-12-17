@@ -1,13 +1,13 @@
 digraph example3{
   rankdir="LR";
   label="example3";
-  subgraph rectangular_nodes {
-    node [shape="rectangle"];
-    A;
-  };
-  subgraph cluster_1{
-    label="cluster 1";
-    B;
-  }
+
+  // Set attributes for all nodes and edges
+  node[shape=rectangle];
+  edge[style="dashed", color="red"];
+
+  B[label="bravo", shape=hexagon];          
+
   A -> B;
+  B -> C[style=solid, label="B to C"];
 }
